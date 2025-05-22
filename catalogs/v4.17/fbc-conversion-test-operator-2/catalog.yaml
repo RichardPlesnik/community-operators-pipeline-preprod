@@ -1,0 +1,106 @@
+---
+defaultChannel: stable-v0.0
+name: fbc-conversion-test-operator-2
+schema: olm.package
+---
+entries:
+- name: fbc-conversion-test-operator-2.0.0.100
+name: candidate-v0
+package: fbc-conversion-test-operator-2
+schema: olm.channel
+---
+entries:
+- name: fbc-conversion-test-operator-2.0.0.100
+name: candidate-v0.0
+package: fbc-conversion-test-operator-2
+schema: olm.channel
+---
+entries:
+- name: fbc-conversion-test-operator-2.0.0.100
+name: stable-v0
+package: fbc-conversion-test-operator-2
+schema: olm.channel
+---
+entries:
+- name: fbc-conversion-test-operator-2.0.0.100
+name: stable-v0.0
+package: fbc-conversion-test-operator-2
+schema: olm.channel
+---
+image: quay.io/community-operator-pipeline-stage/fbc-conversion-test-operator-2@sha256:03375223e4378aa05f1c90fd5eea89237a51757e0f8a27ebf4ea074de545a3b6
+name: fbc-conversion-test-operator-2.0.0.100
+package: fbc-conversion-test-operator-2
+properties:
+- type: olm.gvk
+  value:
+    group: tools.opdev.io
+    kind: DemoResource
+    version: v1
+- type: olm.package
+  value:
+    packageName: fbc-conversion-test-operator-2
+    version: 0.0.100
+- type: olm.csv.metadata
+  value:
+    annotations:
+      alm-examples: |-
+        [
+          {
+            "apiVersion": "tools.opdev.io/v1",
+            "kind": "DemoResource",
+            "metadata": {
+              "name": "demoresource-sample"
+            },
+            "spec": {
+              "message": "Hello, World!"
+            }
+          }
+        ]
+      capabilities: Basic Install
+      containerImage: quay.io/opdev/simple-demo-operator@sha256:25ca9cb1f3dc7b8ce0aba4d3383cac20f5f5a1298fbbfde4a6adab7b1000cb0e
+      createdAt: "2023-08-22T12:00:00Z"
+      olm.skipRange: 0.0.0
+      operators.operatorframework.io/builder: operator-sdk-v1.11.0+git
+      operators.operatorframework.io/project_layout: go.kubebuilder.io/v3
+      support: ACME Ltd.
+    apiServiceDefinitions: {}
+    crdDescriptions:
+      owned:
+      - description: DemoResource is the Schema for the demoresources API
+        displayName: Demo Resource
+        kind: DemoResource
+        name: demoresources.tools.opdev.io
+        version: v1
+    description: A fbc-conversion-test-operator-2 with a minimal reconciliation function,
+      for testing basic operator installation and validation workflows.
+    displayName: fbc-conversion-test-operator-2
+    installModes:
+    - supported: true
+      type: OwnNamespace
+    - supported: false
+      type: SingleNamespace
+    - supported: false
+      type: MultiNamespace
+    - supported: true
+      type: AllNamespaces
+    keywords:
+    - hello
+    - world
+    links:
+    - name: fbc-conversion-test-operator-2
+      url: https://github.com/opdev/hello-world-operator
+    maintainers:
+    - email: apal@redhat.com
+      name: Avnish Pal
+    maturity: alpha
+    provider:
+      name: Red Hat Ecosystem Engineering
+      url: github.com/opdev
+relatedImages:
+- image: gcr.io/kubebuilder/kube-rbac-proxy@sha256:db06cc4c084dd0253134f156dddaaf53ef1c3fb3cc809e5d81711baa4029ea4c
+  name: kube-rbac-proxy
+- image: quay.io/community-operator-pipeline-stage/fbc-conversion-test-operator-2@sha256:03375223e4378aa05f1c90fd5eea89237a51757e0f8a27ebf4ea074de545a3b6
+  name: ""
+- image: quay.io/opdev/simple-demo-operator@sha256:25ca9cb1f3dc7b8ce0aba4d3383cac20f5f5a1298fbbfde4a6adab7b1000cb0e
+  name: manager
+schema: olm.bundle
